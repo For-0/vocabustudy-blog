@@ -1,0 +1,3 @@
+[submodule "vocabustudy"]
+	path = vocabustudy
+	url = https://github.com/for-0/vocabustudy.git
