@@ -1,0 +1,40 @@
+@use "../../vocabustudy/src/css/_bulma-modules" as *;
+@use "@bulvar/bulma/themes/light";
+@use "../../vocabustudy/src/css/_dark-theme";
+
+.article {
+    margin-bottom: 2rem;
+}
+kbd {
+    margin: 0 0.1em;
+    padding: 0.1em 0.6em;
+    border-radius: 3px;
+    border: 1px solid rgb(204, 204, 204);
+    color: rgb(51, 51, 51);
+    line-height: 1.4;
+    font-family: $family-monospace;
+    font-size: 10px;
+    display: inline-block;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 20%), inset 0 0 0 2px #fff;
+    background-color: rgb(247, 247, 247);
+    text-shadow: 0 1px 0 #fff;
+    vertical-align: middle;
+}
+a:visited.navbar-item {
+    color: var(--navbar-item-color);
+}
+a:visited.dropdown-item {
+    color: var(--dropdown-item-color);
+}
+.navbar-burger:focus {
+    color: revert;
+}
+.list-item-title {
+    color: var(--text-strong);
+}
+.list.has-hoverable-list-items .list-item:hover {
+    background-color: var(--scheme-main-ter);
+}
+html, body {
+    height: 100%;
+}

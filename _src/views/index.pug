@@ -1,0 +1,42 @@
+---
+layout: main.pug
+title: Home
+---
+section.hero.is-primary.is-medium.is-bold
+    .hero-body
+        .container.has-text-centered
+            h1.title.is-1 Welcome to The Vocabustudy Blog!
+            h1.subtitle.mt-2 Helpful tips and tricks, exclusive behind-the-scenes, and interesting articles await.
+.container
+    section.articles
+        .column.is-8.is-offset-2
+            .has-text-center.mt-5
+                h1.title LATEST POST
+                hr.mh-auto(style='width: 35%;')
+            .card.article
+                .card-content
+                .media
+                    .media-content.has-text-centered
+                        p.title.article-title Latest Article
+                        .tags.has-addons.level-item
+                            span.tag.is-rounded.is-primary
+                                a.has-text-light(href='https://github.com/IMGROOT2' style='color:white') Ruhan Gupta
+                            span.tag.is-rounded Jan 3, 2023
+                        .content.article-body
+                            p im tired
+                            p the author tags are clickable btw
+                            p and i also picked a random quote from siddhant on skype for the below post
+            .has-text-center.mt-5
+                h1.title PREVIOUS POSTS
+                hr.mh-auto(style='width: 35%;')
+            .card.article
+                .card-content
+                    .media
+                        .media-content.has-text-centered
+                            p.title.article-title Not a Latest Article
+                            .tags.has-addons.level-item
+                                span.tag.is-rounded.is-primary
+                                    a.has-text-light(href='https://github.com/grimsteel') Siddhant Kameswar
+                                span.tag.is-rounded Jan 7, 2023
+                            .content.article-body
+                                p &quot;Add vocabustudy as a git submodule. (famous last words)&quot;
