@@ -1,9 +1,21 @@
 {
+  "name": "vocabustudy-blog",
+  "version": "0.1.0",
+  "description": "The official Vocabustudy blog",
   "dependencies": {
     "bulma": "^0.9.4"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.8.2",
-    "parcel": "^2.8.2"
-  }
+    "sass": "^1.57.1",
+    "@11ty/eleventy": "^1.0.2"
+  },
+  "scripts": {
+    "watch:sass": "sass --watch _src/sass:_site/css",
+    "build:sass": "sass _src/sass:_site/css",
+    "watch:eleventy": "eleventy --serve",
+    "build:eleventy": "eleventy"
+  },
+  "keywords": [],
+  "author": "The Vocabustudy Developer Team",
+  "license": "GPL-3.0"
 }
