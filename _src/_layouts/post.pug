@@ -1,0 +1,31 @@
+---
+layout: main.pug
+permalink: "posts/{{ post_slug | default: title | slugify }}/index.html"
+---
+.container.mt-3.p-1(style="overflow-y: auto;min-height: 0;")
+    h1.title.is-2 #{ title }
+    .tags
+        each tag in tags.filter(t => t !== "post")
+            span.tag.is-primary #{ tag }
+    article.media.box !{ filters.authorPFP(authorData) }
+        .media-content
+            .content(style="--small-font-size: 0.75em;")
+                p #[strong #{ authorData.name }] #[a(href=`https://github.com/${ authorData.login }`) #[small @#{ authorData.login }]] !{filters.postDate(page.date)}
+                    br
+                    span.has-text-grey #{ authorData.bio }
+    hr
+    .content !{ content }
+    hr
+    .buttons.mb-3.is-flex.is-flex-direction-row.is-justify-content-space-between
+        - var previousPost = filters.getPreviousCollectionItem(collections.post, page, "en");
+        - var nextPost = filters.getNextCollectionItem(collections.post, page, "en");
+        if previousPost
+            a.button.is-outlined.has-text-dark(href=previousPost.url)
+                span.icon
+                    i.material-symbols-rounded(aria-hidden="true") arrow_back
+                span Previous Post: #[strong #{ previousPost.data.title }]
+        if nextPost
+            a.button.is-outlined.has-text-dark(href=nextPost.url)
+                span Next Post: #[strong #{ nextPost.data.title }]
+                span.icon
+                    i.material-symbols-rounded(aria-hidden="true") arrow_forward

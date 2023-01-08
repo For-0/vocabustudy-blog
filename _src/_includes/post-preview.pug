@@ -1,0 +1,26 @@
+mixin post-preview(postData)
+    article.media.box !{ filters.authorPFP(postData.data.authorData) }
+        .media-content
+            .content(style="--small-font-size: 0.75em;")
+                p #[strong #{ postData.data.title }] #[a(href=`https://github.com/${ postData.data.authorData.login }`) #[small @#{ postData.data.authorData.login }]] !{ filters.postDate(postData.page.date) }
+                    br
+                    span.has-text-grey #{ filters.contentSnippet(postData.content) }...
+            .tags
+                each tag in postData.data.tags.filter(t => t !== "post")
+                    span.tag.is-primary.is-light #{ tag }
+            .buttons
+                a.button.is-primary(href=postData.url)
+                    span Read More
+                    span.icon
+                        i.material-symbols-rounded arrow_circle_right
+                button.button.is-primary.is-outlined.btn-share(data-title=postData.data.title, data-url=postData.page.url, data-text=filters.contentSnippet(postData.content))
+                    span Share
+                    span.icon
+                        i.material-symbols-rounded.is-filled share
+script.
+    document.addEventListener("DOMContentLoaded", () => {
+        if ("share" in navigator)
+            document.querySelectorAll(".btn-share").forEach(el => el.addEventListener("click", () => navigator.share(el.dataset)));
+        else
+            document.querySelectorAll(".btn-share").forEach(el => el.disabled = true);
+    });

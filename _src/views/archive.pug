@@ -1,0 +1,33 @@
+---
+layout: main.pug
+title: Archive
+pagination:
+    data: collections.post
+    size: 10
+    alias: posts
+    reverse: true
+eleventyImport:
+    collections: ["post"]
+---
+include ../_includes/post-preview.pug
+.container.mt-3.is-flex.is-flex-direction-column(style="min-height: 0;")
+    h1.title.is-2 Posts Archive
+    .is-flex-grow-1.p-1(style="overflow: auto; min-height: 0;")
+        each post in posts
+            +post-preview(post)
+    hr
+    nav.pagination.is-centered.mb-3(role="navigation" aria-label="pagination")
+        if pagination.href.previous
+            a.pagination-previous(href=pagination.href.previous) Previous Page
+        else
+            a.pagination-previous.is-invisible Previous Page
+        if pagination.href.next
+            a.pagination-next(href=pagination.href.next) Next Page
+        else
+            a.pagination-next.is-invisible Next Page
+        ul.pagination-list
+            each pageEntry, index in pagination.pages
+                if page.url == pagination.hrefs[index]
+                    li #[a.pagination-link.is-current(href=pagination.hrefs[index] aria-current="page") #{ index + 1 }]
+                else
+                    li #[a.pagination-link(href=pagination.hrefs[index]) #{ index + 1 }]

@@ -3,19 +3,23 @@
   "version": "0.1.0",
   "description": "The official Vocabustudy blog",
   "dependencies": {
+    "@11ty/eleventy-fetch": "^3.0.0",
     "@bulvar/bulma": "^0.11.13",
     "bulma": "^0.9.4"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy": "2.0.0-canary.23",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "concurrently": "^7.6.0",
     "sass": "^1.57.1"
   },
   "scripts": {
     "watch:sass": "sass --watch -I node_modules _src/scss:_site/css",
     "build:sass": "sass -I node_modules _src/scss:_site/css",
-    "watch:eleventy": "eleventy --serve",
+    "watch:eleventy": "eleventy --serve --incremental",
     "build:eleventy": "eleventy",
-    "build": "rm -rf _site && npm run build:sass && npm run build:eleventy"
+    "build": "rm -rf _site && npm run build:sass && npm run build:eleventy",
+    "watch": "rm -rf _site && concurrently -n w: npm:watch:* -c bgBlue,bgRed"
   },
   "keywords": [],
   "author": "The Vocabustudy Developer Team",
