@@ -1,0 +1,26 @@
+---
+permalink: |
+    | feed.xml
+eleventyExcludeFromCollections: true
+metadata:
+    url: "https://blog.vocabustudy.org/"
+---
+doctype xml
+feed(xmlns="http://www.w3.org/2005/Atom" xml:base=metadata.url)
+    title Vocabustudy Blog
+    subtitle Ramblings and random code snippets around Vocabustudy and For Zero
+    link(href=filters.absoluteUrl(permalink, metadata.url) rel="self")
+    link(href=metadata.url)
+    updated #{ filters.dateToRfc3339(filters.getNewestCollectionItemDate(collections.post)) }
+    id #{ metadata.url }
+    author
+        name Vocabustudy Developers
+        email management@vocabustudy.org
+    each post in [...collections.post].reverse()
+        - var absolutePostUrl = filters.absoluteUrl(post.url, metadata.url)
+        entry
+            title #{ post.data.title }
+            link(href=absolutePostUrl)
+            updated #{ filters.dateToRfc3339(post.date) }
+            id #{ absolutePostUrl }
+            content(xml:lang="en" type="html") #{ post.content }
