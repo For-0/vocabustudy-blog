@@ -11,11 +11,11 @@ html(lang="en")
         link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap")
         link(rel="icon" href="/images/favicon.ico")
         link(rel="icon" href="/images/apple-touch-icon.png")
-        title #{title} - The Vocabustudy Blog
+        title #{title} - Undefined - The Vocabustudy Blog
     body.is-flex.is-flex-direction-column
         nav.navbar.is-primary
             .navbar-brand.is-justify-content-space-between
-                a.navbar-item(href="https://vocabustudy.org/")
+                a.navbar-item(href="/")
                     img(src="/images/icon-192.png" height="28" style="border: 0.5px solid #ffffff9c;border-radius: 7px;")
                 a.navbar-burger(role='button' aria-label='menu' aria-expanded='false' data-target='main-navbar')
                     span.has-background-white(aria-hidden='true')
@@ -23,8 +23,10 @@ html(lang="en")
                     span.has-background-white(aria-hidden='true')
             #main-navbar.navbar-menu
                 .navbar-start
-                    a.navbar-item.has-text-semibold(href="/") Vocabustudy Blog
+                    a.navbar-item.has-text-semibold(href="/") Undefined - The Vocabustudy Blog
                     a.navbar-item(href="/archive/") Archive
+                .navbar-end
+                    a.navbar-item(href="https://vocabustudy.org/") vocabustudy.org
         main.is-flex-grow-1.is-flex.is-flex-direction-column(style="min-height: 0;") !{content}
         footer.footer
             p.has-text-centered &copy; 2023 For Zero Applications. Created by Siddhant Kameswar and Ruhan Gupta. All rights reserved.

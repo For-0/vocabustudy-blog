@@ -5,10 +5,10 @@ eleventyImport:
     collections: ["post"]
 ---
 include ../_includes/post-preview.pug
-section.hero.is-primary.is-medium.is-bold
+section.hero.is-primary.is-bold(style='background-image: linear-gradient(hsla(var(--primary-h), var(--primary-s), var(--primary-l), var(--primary-a)), transparent), url("https://images.unsplash.com/photo-1556244573-c3686c0f0e78?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80");background-size: cover;')
     .hero-body
         .container.has-text-centered
-            h1.title.is-1 Welcome to The Vocabustudy Blog!
+            h1.title.is-1 Welcome to #[strong(style="font-weight: 700;") Undefined] - The Vocabustudy Blog!
             h1.subtitle.mt-2 Helpful tips and tricks, exclusive behind-the-scenes, and interesting articles await.
 .container.is-flex-grow-1.mb-3(style="min-height: 0;overflow-y: auto;")
     section.articles
