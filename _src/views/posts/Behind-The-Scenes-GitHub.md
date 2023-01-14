@@ -7,7 +7,7 @@ tags:
     - developing
 ---
 
-I've decided to start a "blog series," which I have aptly chosen to name "Behind For Zero." In this blog series, I'll share some special applications, tricks, and tips we developers use here at For Zero.
+I've decided to start a blog series, which I have aptly chosen to name Behind For Zero. In this blog series, I'll share some special applications, tricks, and tips we developers use here at For Zero.
 
 ###### **Quick reminder:** Remember to check in on Undefined now and then to read the latest blog post! We post at a minimum every few days so that you can get fresh new content quickly.
 

@@ -66,3 +66,15 @@ a.pagination-previous {@extend .pagination-previous;}
 :root {
     --pagination-current-background-color: var(--primary);
 }
+.mask {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    background-image: url(../vocabustudy/src/images/login-background.svg);
+    color: #ffff;
+    -webkit-background-clip: text;
+    color: white;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: white;
+    -webkit-text-fill-color: transparent;
+}
