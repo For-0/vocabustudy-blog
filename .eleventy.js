@@ -5,6 +5,7 @@ const {DateTime} = require("luxon"); // Luxon is an eleventy dependency
 module.exports = eleventyConfig => {
     eleventyConfig.addWatchTarget("./src/scss");
     eleventyConfig.addPassthroughCopy({ "./_src/images": "images" });
+    eleventyConfig.addPassthroughCopy("robots.txt")
     eleventyConfig.addJavaScriptFunction("postDate", value => {
         let date = process.env.NODE_ENV === "production" ? DateTime.fromJSDate(value, {zone: "utc"}).setZone("America/Chicago") : DateTime.fromJSDate(value);
         return `<small class="is-pulled-right">Posted on <time datetime="${date.toISO()}">${date.toLocaleString({year: '2-digit', month: 'numeric', day: 'numeric', hour: 'numeric', minute: '2-digit', })}</time></small>`;
