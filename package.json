@@ -3,14 +3,15 @@
   "version": "0.1.0",
   "description": "The Official Vocabustudy Blog.",
   "dependencies": {
-    "@11ty/eleventy-fetch": "^3.0.0",
     "@bulvar/bulma": "^0.11.13",
     "bulma": "^0.9.4"
   },
   "devDependencies": {
     "@11ty/eleventy": "2.0.0-canary.23",
+    "@11ty/eleventy-img": "^2.0.1",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "@11ty/eleventy-fetch": "^3.0.0",
     "concurrently": "^7.6.0",
     "sass": "^1.57.1"
   },

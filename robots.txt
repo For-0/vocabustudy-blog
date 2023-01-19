@@ -2,3 +2,4 @@ Sitemap: https://blog.vocabustudy.org/sitemap.xml
 
 User-agent: *
 Allow: /
+Disallow /external-images/
