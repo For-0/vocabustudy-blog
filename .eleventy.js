@@ -7,7 +7,8 @@ const imgOptions = {
     urlPath: "/external-images/",
     formats: ["webp"],
     outputDir: "./_site/external-images/",
-    widths: [48]
+    widths: [48],
+    filenameFormat: (_id, src, width, format) => `${src.match(/u\/(\d+)/)[1]}-${width}.${format}`
 };
 
 module.exports = eleventyConfig => {
@@ -25,8 +26,7 @@ module.exports = eleventyConfig => {
             class: "is-rounded",
             alt: "Profile Picture",
             loading: "lazy",
-            decoding: "async",
-        
+            decoding: "async"
         });
         return `<figure class="media-left"><a href="https://github.com/${value.login}"><p class="image is-48x48">${imageHtml}</p></a></figure>`;
     });
