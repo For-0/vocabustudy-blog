@@ -5,7 +5,9 @@ const EleventyImage = require("@11ty/eleventy-img");
 
 const imgOptions = {
     urlPath: "/external-images/",
-    formats: ["webp"]
+    formats: ["webp"],
+    outputDir: "./_site/external-images/",
+    widths: [48]
 };
 
 module.exports = eleventyConfig => {
@@ -18,16 +20,14 @@ module.exports = eleventyConfig => {
     });
     eleventyConfig.addJavaScriptFunction("contentSnippet", value => value.replace(/<[^>]*>/g, "").substring(0, 150));
     eleventyConfig.addJavaScriptFunction("authorPFP", value => {
-        authorPfp: async pfpUrl => {
-            EleventyImage(pfpUrl, imgOptions);
-            let imageHtml = EleventyImage.generateHTML(EleventyImage.statsSync(pfpUrl, imgOptions), {
-                class: "is-rounded",
-                alt: "Profile Picture",
-                loading: "lazy",
-                decoding: "async"
-            });
-            return 
-        }
+        EleventyImage(value.avatar_url, imgOptions);
+        let imageHtml = EleventyImage.generateHTML(EleventyImage.statsByDimensionsSync(value.avatar_url, 48, 48, imgOptions), {
+            class: "is-rounded",
+            alt: "Profile Picture",
+            loading: "lazy",
+            decoding: "async",
+        
+        });
         return `<figure class="media-left"><a href="https://github.com/${value.login}"><p class="image is-48x48">${imageHtml}</p></a></figure>`;
     });
     eleventyConfig.addJavaScriptFunction("getNewestCollectionItemDate", pluginRSS.getNewestCollectionItemDate);
