@@ -33,6 +33,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.16.0
+          registry-url: https://npm.pkg.github.com/
       - env:
           NODE_ENV: production
           NODE_AUTH_TOKEN: ${{ secrets.GPR_PAT }}
