@@ -30,14 +30,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          submodules: recursive
-          fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
           node-version: 16.16.0
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_ENV: production
         run: npm ci --include=dev && npm run build
       - name: Setup Pages
