@@ -1,8 +1,8 @@
-@use "../../vocabustudy/src/css/_bulma-modules" as * with (
+@use "@for-0/bulvar-styles/src/bulvar-styles/bulvar" as * with (
     $custom-colors: ()
 );
 @use "@bulvar/bulma/themes/light";
-@use "../../vocabustudy/src/css/_dark-theme";
+@use "@for-0/bulvar-styles/src/bulvar-styles/dark-theme";
 @use "@bulvar/bulma/sass/elements/image";
 @use "@bulvar/bulma/sass/components/media";
 @use "@bulvar/bulma/sass/components/pagination";
