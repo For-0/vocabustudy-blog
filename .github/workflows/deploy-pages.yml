@@ -14,7 +14,6 @@ permissions:
   contents: read
   pages: write
   id-token: write
-  packages: read
 
 # Allow one concurrent deployment
 concurrency:
@@ -36,6 +35,7 @@ jobs:
           node-version: 16.16.0
       - env:
           NODE_ENV: production
+          NODE_AUTH_TOKEN: ${{ secrets.GPR_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm ci --include=dev && npm run build
       - name: Setup Pages
