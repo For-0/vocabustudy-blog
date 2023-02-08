@@ -7,7 +7,7 @@ module.exports = {
     eleventyComputed: {
         authorData: data =>  {
             let headers = {Accept: "application/vnd.github+json"};
-            if (process.env.GH_TOKEN) headers.Authorization = `Bearer ${process.env.GH_TOKEN}`;
+            if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
             return EleventyFetch(`https://api.github.com/users/${data.author}`, { duration: "1d", type: "json", verbose: true, fetchOptions: { headers } });
         }
     }

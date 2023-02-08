@@ -35,8 +35,8 @@ jobs:
         with:
           node-version: 16.16.0
       - env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_ENV: production
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm ci --include=dev && npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v2
