@@ -78,3 +78,6 @@ a.pagination-previous {@extend .pagination-previous;}
     -webkit-text-stroke-color: white;
     -webkit-text-fill-color: transparent;
 }
+.number {
+    all: unset; /* The number class from Bulma conflicts with Prism's number class */
+}
