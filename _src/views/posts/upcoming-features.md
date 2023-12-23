@@ -1,5 +1,5 @@
 ---
-title: Search and Seizure - Features Coming to Vocabustudy
+title: Search- Features Coming to Vocabustudy
 author: grimsteel
 tags:
     - programming
@@ -7,11 +7,7 @@ tags:
     - new features
 ---
 
-The fourth amendment of the US Constitution is protection against search and seizure. This also happens to be the fourth blog post which, among other things, hints at a better search capability for Vocabustudy. Sorry, no seizure. 
-
-I'm just making weird connections now
-
-Anyway there are a lot more "exciting" features coming up! The "most exciting" one would probably be search, solely because search right now is kind of broken if you haven't noticed already. The new search implementation will among other things, order your results correctly, let you filter by more than 10 collections, and let you use "advanced" searching functionality like: `description:wow this is some cool text that might be in a set description`.
+There are a lot more "exciting" features coming up! The "most exciting" one would probably be search, solely because search right now is kind of broken if you haven't noticed already. The new search implementation will among other things, order your results correctly, let you filter by more than 10 collections, and let you use "advanced" searching functionality like: `description:wow this is some cool text that might be in a set description`.
 
 One thing that I _won't_ be implementing is searching inside the actual terms and definitions. That's too much content to search through especially for the larger sets.
 
